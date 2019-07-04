@@ -1,22 +1,33 @@
 <template>
 	<div class="filmbox">
 		<div class="title">
-			<p>最受关注图书｜虚构类</p>
+			<p>热映电影</p>
 			<a href="#">更多</a>
 		</div>
 		<div class="film">
-			<div class="filmitem" v-for="(item, index) in arr" v-show="index >= 24 && index <= 31">
+			<div class="filmitem" v-for="(item, index) in arr" v-show="index <= 36 && index>=28">
 				<img :src="item.cover_url" alt="" />
 				<p>{{ item.title }}</p>
 				<p class="pingfen">评分:{{ item.count }}</p>
 			</div>
 		</div>
 		<div class="title">
-			<p>最受关注图书｜非虚构类</p>
+			<p>免费在线观影</p>
 			<a href="#">更多</a>
 		</div>
 		<div class="film">
-			<div class="filmitem" v-for="(item, index) in arr" v-show="index >= 32 && index <= 39">
+			<div class="filmitem" v-for="(item, index) in arr" v-show="index >= 36 && index <= 45">
+				<img :src="item.cover_url" alt="" />
+				<p>{{ item.title }}</p>
+				<p class="pingfen">评分:{{ item.count }}</p>
+			</div>
+		</div>
+		<div class="title">
+			<p>即将上市的电影</p>
+			<a href="#">更多</a>
+		</div>
+		<div class="film">
+			<div class="filmitem" v-for="(item, index) in arr" v-show="index >= 28 && index <=36">
 				<img :src="item.cover_url" alt="" />
 				<p>{{ item.title }}</p>
 				<p class="pingfen">评分:{{ item.count }}</p>
@@ -24,8 +35,9 @@
 		</div>
 	</div>
 </template>
+
 <script>
-import Broadcastpublic from './broadcastpublic';
+import Broadcastpublic from './broadcastpublic'
 export default {
 	data() {
 		return {
@@ -54,26 +66,29 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped="scoped">
 .filmbox {
 	text-align: left;
 	width: 100%;
 	box-sizing: border-box;
 	margin-bottom: 74/64rem;
 	font-size: 18/64rem;
+	display: flex;
+	flex-wrap: wrap;
 	.film {
 		display: flex;
-		overflow: auto;
+		flex-wrap: wrap;
 		margin-right: 10/64rem;
 		&::-webkit-scrollbar {
 			display: none;
 		}
 		.filmitem {
+			flex: 1;
 			width: 100/64rem;
 			margin-left: 10/64rem;
 			img {
-				width: 100/64rem;
-				height: 142/64rem;
+				width: 114/64rem;
+				height: 170/64rem;
 				margin-bottom: -8/64rem;
 			}
 			p {
@@ -97,6 +112,7 @@ export default {
 		a {
 			color: #42bd56;
 			font-size: 18/64rem;
+			text-decoration: none;
 		}
 	}
 }

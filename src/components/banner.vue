@@ -44,7 +44,7 @@
 	}
 </script>
 
-<style>
+<style scoped="scoped">
 
 .banner{
 	width: 100%;

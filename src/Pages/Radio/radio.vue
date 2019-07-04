@@ -80,7 +80,7 @@
 	
 </script>
 
-<style lang="less">
+<style lang="less" scoped="scoped">
 	.contentbox{
 		width: 100%;
 		box-sizing: border-box;

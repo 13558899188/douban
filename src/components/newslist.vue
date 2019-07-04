@@ -11,7 +11,7 @@
 		props: ['url']
 	}
 </script>
-<style lang="less">
+<style lang="less" scoped="scoped">
 	.listWrap {
 		width: 100%;
 		border-bottom: 1px solid #ccc;

@@ -1,38 +1,22 @@
 <template>
 	<div class="filmbox">
-		<div class="title">
-			<p>热映电影</p>
-			<a href="#">更多</a>
-		</div>
-		<div class="film">
-			<div class="filmitem" v-for="(item, index) in arr" v-show="index <= 7">
-				<img :src="item.cover_url" alt="" />
-				<p>{{ item.title }}</p>
-				<p class="pingfen">评分:{{ item.count }}</p>
-			</div>
-		</div>
-		<div class="title">
-			<p>免费在线观影</p>
-			<a href="#">更多</a>
-		</div>
-		<div class="film">
-			<div class="filmitem" v-for="(item, index) in arr" v-show="index >= 8 && index <= 14">
-				<img :src="item.cover_url" alt="" />
-				<p>{{ item.title }}</p>
-				<p class="pingfen">评分:{{ item.count }}</p>
-			</div>
-		</div>
-		<div class="title">
-			<p>即将上市的电影</p>
-			<a href="#">更多</a>
-		</div>
-		<div class="film">
-			<div class="filmitem" v-for="(item, index) in arr" v-show="index >= 15 && index <=23">
-				<img :src="item.cover_url" alt="" />
-				<p>{{ item.title }}</p>
-				<p class="pingfen">评分:{{ item.count }}</p>
-			</div>
-		</div>
+      <div class="filmItem" v-for="(item,index) in arr">
+		  <div class="itemTop">
+			  <h3>{{item.group.title}}</h3>
+			 <div class="itemTR">
+				 <span>全部</span>
+				 <span>{{item.group.num}}</span>
+				 <img src="../assets/righticon.png" alt="">
+			 </div>
+		  </div>
+		  <div class="itemlist" v-for="listItem in item.group.itemContent">
+			  <img :src="listItem.imgUrl" alt="" class="mimg">
+			  <span class="itemname">{{listItem.itemTitle}}</span>
+			  <span class="itemauthor">{{listItem.author}}</span>
+			  <span class="num">{{listItem.pingfen}}</span>
+			  <img src="../assets/listicon.png" alt="" class="listicon">
+		  </div>
+	  </div>
 	</div>
 </template>
 
@@ -46,7 +30,7 @@ export default {
 	},
 	methods: {
 		getFdata() {
-			this.$Axios.get('../../static/data/filmData.json').then(
+			this.$Axios.get('../../static/data/music.json').then(
 				res => {
 					console.log('success', res);
 					this.arr = res.data.recommend_feeds;
@@ -66,49 +50,79 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped="scoped">
 .filmbox {
-	text-align: left;
-	width: 100%;
-	box-sizing: border-box;
-	margin-bottom: 74/64rem;
-	font-size: 18/64rem;
-	.film {
+	margin-bottom: 70/64rem;
+	.filmItem{
+		width:100%;
+		box-sizing:border-box;
+		padding:0 8/64rem;
 		display: flex;
-		overflow: auto;
-		margin-right: 10/64rem;
-		&::-webkit-scrollbar {
-			display: none;
+		flex-wrap: wrap;
+		.itemTop{
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			height: 50/64rem;
+			padding:0 4/64rem;
+		    color: #000;
+			.itemTR{
+				display: flex;
+				align-items: center;
+				font-size:14/64rem;
+				span{
+					display: block;
+					width: 30/64rem;
+					text-align: center;
+				}
+				img{
+					width: 16/64rem;
+				}
+			}
 		}
-		.filmitem {
-			width: 100/64rem;
-			margin-left: 10/64rem;
-			img {
-				width: 100/64rem;
-				height: 142/64rem;
+		.itemlist{
+		    width: 131/64rem;
+			height: 198/64rem;
+		    position: relative;
+		    font-size:14/64rem;
+			padding-bottom: 6/64rem;
+			.mimg{
+				width: 120/64rem;
+				height: 126/64rem;
+				border-radius: 6/64rem;
+				border: 1px solid #ccc;
 				margin-bottom: -8/64rem;
 			}
-			p {
+			span{
+				display: block;
+				line-height: 20/64rem;
+				text-align: left;
+				padding:0 8/64rem;
+			}
+			.listicon{
+				position: absolute;
+				top: 0;
+				left: 4%;
+				border-radius: 4/64rem 0;
+			}
+			.itemname{
+				font-weight: bold;
 				overflow: hidden;
 				white-space: nowrap;
 				text-overflow: ellipsis;
-				line-height: 24/64rem;
 			}
-			.pingfen {
-				font-size: 15/64rem;
+			.itemauthor{
+				font-size: 13/64rem;
+				color: #999;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
 			}
-		}
-	}
-	.title {
-		width: 100%;
-		box-sizing: border-box;
-		padding: 0 10/64rem;
-		line-height: 60/64rem;
-		display: flex;
-		justify-content: space-between;
-		a {
-			color: #42bd56;
-			font-size: 18/64rem;
+			.num{
+				font-size: 12/64rem;
+				color: #666;
+			}
 		}
 	}
 }

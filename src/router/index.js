@@ -14,6 +14,10 @@ import Ready from '../components/ready.vue'
 import City from '../components/city.vue'
 import Music from '../components/music.vue'
 
+
+//配置书影音的三级路由
+
+
 Vue.use(Router)
 
 export default new Router({

@@ -11,7 +11,7 @@
 		props:['txt',"hasbg"]
 	}
 </script>
-<style lang="less">
+<style lang="less" scoped="scoped">
 	.headerWrap{
 		width: 100%;
 		display: flex;

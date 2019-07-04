@@ -81,7 +81,7 @@
 	
 </script>
 
-<style lang="less">
+<style lang="less" scoped="scoped">
 	.listitem{
 		width: 100%;
 		box-sizing: border-box;

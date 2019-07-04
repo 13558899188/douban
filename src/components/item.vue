@@ -26,7 +26,7 @@
 		}
 	}
 </script>
-<style lang="less">
+<style lang="less" scoped="scoped">
 	.item{
 		width: 20%;
 		text-align: center;

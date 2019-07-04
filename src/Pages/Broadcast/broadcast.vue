@@ -46,7 +46,7 @@
 	
 </script>
 
-<style lang="less">
+<style lang="less" scoped="scoped">
 	.nav{
 		height: 42/64rem;
 		line-height: 42/64rem;

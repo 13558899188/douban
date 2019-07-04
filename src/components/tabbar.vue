@@ -45,7 +45,7 @@
 
 </script>
 
-<style lang="less">
+<style lang="less" scoped="scoped"> 
 	.tabbar {
 		max-width: 640px;
 		width: 100%;
