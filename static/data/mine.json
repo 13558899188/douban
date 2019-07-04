@@ -1,0 +1,33 @@
+{
+    "date": "2019-06-08",
+    "recommend_feeds": [
+        {
+        	"title":"风险承受能力评估",
+			 "myclass":"listIcon iconfont icon-bianji"
+        },
+		 {
+			"title":"安全保障",
+			 "myclass":"listIcon iconfont icon-17"
+		},
+		 {
+			"title":"我的关注",
+			 "myclass":"listIcon iconfont icon-weibiaoti2fuzhi12"
+		},
+		 {
+			"title":"帮助中心",
+			 "myclass":"listIcon iconfont icon-bangzhu"
+		},
+		 {
+			"title":"关于我们",
+			 "myclass":"listIcon iconfont icon-weibiaoti2fuzhi12"
+		},
+		 {
+			"title":"检查更新",
+			 "myclass":"listIcon iconfont icon-jianchaquyu"
+		},
+		 {
+			"title":"联系客服",
+			 "myclass":"listIcon iconfont icon-service"
+		}
+    ]
+}
